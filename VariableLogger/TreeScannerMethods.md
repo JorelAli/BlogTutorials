@@ -5,10 +5,20 @@
 ```java
 public class aa {
 
+    @BadAnnotation
     public static void main(String[] args) {
         int i = 0;
         i = i + 4;
         i += 2;
+
+        if(true) {
+            throw new RuntimeException();
+        }
+
+        for(int j = 0; j < 2; j++) {
+
+        }
+
         System.out.println(i);
     }
 }
@@ -19,15 +29,13 @@ public class aa {
 | **Method**                                                   | **JC equivalent**       | **Example**s                                |
 | ------------------------------------------------------------ | ----------------------- | ------------------------------------------- |
 | `visitAnnotatedType(AnnotatedTypeTree, Void)`                | `JCAnnotatedType`       |                                             |
-| `visitAnnotation(AnnotationTree, Void)`                      | `JCAnnotation`          |                                             |
+| `visitAnnotation(AnnotationTree, Void)`                      | `JCAnnotation`          | `@BadAnnotation()`                          |
 | `visitArrayAccess(ArrayAccessTree, Void)`                    | `JCArrayAccess`         |                                             |
 | `visitArrayType(ArrayTypeTree, Void)`                        | `JCArrayTypeTree`       | `String[]`                                  |
 | `visitAssert(AssertTree, Void)`                              | `JCAssert`              |                                             |
 | `visitAssignment(AssignmentTree, Void)`                      | `JCAssign`              | `i = i + 2`                                 |
 | `visitBinary(BinaryTree, Void)`                              | `JCBinary`              | `i + 4`                                     |
-| `visitBlock(BlockTree, Void)`                                | `JCBlock`               | `{
-blah
-}`                                  |
+| `visitBlock(BlockTree, Void)`                                | `JCBlock`               | `{ /*code*/ }`                              |
 | `visitBreak(BreakTree, Void)`                                | `JCBreak`               |                                             |
 | `visitCase(CaseTree, Void)`                                  | `JCCase`                |                                             |
 | `visitCatch(CatchTree, Void)`                                | `JCCatch`               |                                             |
@@ -41,7 +49,8 @@ blah
 | `visitEnhancedForLoop(EnhancedForLoopTree, Void)`            | `JCEnhancedForLoop`     |                                             |
 | `visitErroneous(ErroneousTree, Void)`                        | `JCErroneous`           |                                             |
 | `visitExpressionStatement(ExpressionStatementTree, Void)`    | `JCExpressionStatement` | `i = i + 2;` <br />`System.out.println(i);` |
-| `visitForLoop(ForLoopTree, Void)`                            | `JCForLoop`             |                                             |
+| `visitForLoop(ForLoopTree, Void)`                            | `JCForLoop`             | `for (int j = 0; j < 2; j++) {
+<br/>}`       |
 | `visitIdentifier(IdentifierTree, Void)`                      | `JCIdent`               | `System`<br /> `i`<br /> `String`           |
 | `visitIf(IfTree, Void)`                                      | `JCIf`                  |                                             |
 | `visitImport(ImportTree, Void)`                              | `JCImport`              |                                             |
@@ -56,15 +65,15 @@ blah
 | `visitMethodInvocation(MethodInvocationTree, Void)`          | `JCMethodInvocation`    | `System.out.println(i)`                     |
 | `visitModifiers(ModifiersTree, Void)`                        | `JCModifiers`           | `public`<br /> `static`                     |
 | `visitNewArray(NewArrayTree, Void)`                          | `JCNewArray`            |                                             |
-| `visitNewClass(NewClassTree, Void)`                          | `JCNewClass`            |                                             |
+| `visitNewClass(NewClassTree, Void)`                          | `JCNewClass`            | `new RuntimeException()`                    |
 | `visitOther(Tree, Void)`                                     | `JCTree`                |                                             |
 | `visitParameterizedType(ParameterizedTypeTree, Void)`        | `JCTypeApply`           |                                             |
-| `visitParenthesized(ParenthesizedTree, Void)`                | `JCParens`              |                                             |
+| `visitParenthesized(ParenthesizedTree, Void)`                | `JCParens`              | `(true)`                                    |
 | `visitPrimitiveType(PrimitiveTypeTree, Void)`                | `JCPrimitiveTypeTree`   | `void`<br /> `int`                          |
 | `visitReturn(ReturnTree, Void)`                              | `JCReturn`              |                                             |
 | `visitSwitch(SwitchTree, Void)`                              | `JCSwitch`              |                                             |
 | `visitSynchronized(SynchronizedTree, Void)`                  | `JCSynchronized`        |                                             |
-| `visitThrow(ThrowTree, Void)`                                | `JCThrow`               |                                             |
+| `visitThrow(ThrowTree, Void)`                                | `JCThrow`               | `throw new RuntimeException();`             |
 | `visitTry(TryTree, Void)`                                    | `JCTry`                 |                                             |
 | `visitTypeCast(TypeCastTree, Void)`                          | `JCTypeCast`            |                                             |
 | `visitTypeParameter(TypeParameterTree, Void)`                | `JCTypeParameter`       |                                             |
@@ -73,3 +82,7 @@ blah
 | `visitVariable(VariableTree, Void)`                          | `JCVariableDecl`        | `int i = 0`<br /> `String[] args`           |
 | `visitWhileLoop(WhileLoopTree, Void)`                        | `JCWhileLoop`           |                                             |
 | `visitWildcard(WildcardTree, Void)`                          | `JCWildcard`            |                                             |
+
+```java
+blah
+```
