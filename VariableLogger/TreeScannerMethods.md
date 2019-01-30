@@ -2,58 +2,72 @@
 
 ## List of Methods with examples
 
-| **Method**                                                   | **JC equivalent**       | **Example** |
-| ------------------------------------------------------------ | ----------------------- | ----------- |
-| `visitAnnotatedType(AnnotatedTypeTree, Void)`                | `JCAnnotatedType`       |             |
-| `visitAnnotation(AnnotationTree, Void)`                      | `JCAnnotation`          |             |
-| `visitArrayAccess(ArrayAccessTree, Void)`                    | `JCArrayAccess`         |             |
-| `visitArrayType(ArrayTypeTree, Void)`                        | `JCArrayTypeTree`       |             |
-| `visitAssert(AssertTree, Void)`                              | `JCAssert`              |             |
-| `visitAssignment(AssignmentTree, Void)`                      | `JCAssign`              |             |
-| `visitBinary(BinaryTree, Void)`                              | `JCBinary`              |             |
-| `visitBlock(BlockTree, Void)`                                | `JCBlock`               |             |
-| `visitBreak(BreakTree, Void)`                                | `JCBreak`               |             |
-| `visitCase(CaseTree, Void)`                                  | `JCCase`                |             |
-| `visitCatch(CatchTree, Void)`                                | `JCCatch`               |             |
-| `visitClass(ClassTree, Void)`                                | `JCClassDecl`           |             |
-| `visitCompilationUnit(CompilationUnitTree, Void)`            | `JCCompilationUnit`     |             |
-| `visitCompoundAssignment(CompoundAssignmentTree, Void)`      | `JCAssignOp`            |             |
-| `visitConditionalExpression(ConditionalExpressionTree, Void)` | `JCConditional`         |             |
-| `visitContinue(ContinueTree, Void)`                          | `JCContinue`            |             |
-| `visitDoWhileLoop(DoWhileLoopTree, Void)`                    | `JCDoWhileLoop`         |             |
-| `visitEmptyStatement(EmptyStatementTree, Void)`              | `JCSkip`                |             |
-| `visitEnhancedForLoop(EnhancedForLoopTree, Void)`            | `JCEnhancedForLoop`     |             |
-| `visitErroneous(ErroneousTree, Void)`                        | `JCErroneous`           |             |
-| `visitExpressionStatement(ExpressionStatementTree, Void)`    | `JCExpressionStatement` |             |
-| `visitForLoop(ForLoopTree, Void)`                            | `JCForLoop`             |             |
-| `visitIdentifier(IdentifierTree, Void)`                      | `JCIdent`               |             |
-| `visitIf(IfTree, Void)`                                      | `JCIf`                  |             |
-| `visitImport(ImportTree, Void)`                              | `JCImport`              |             |
-| `visitInstanceOf(InstanceOfTree, Void)`                      | `JCInstanceOf`          |             |
-| `visitIntersectionType(IntersectionTypeTree, Void)`          | `JCTypeIntersection`    |             |
-| `visitLabeledStatement(LabeledStatementTree, Void)`          | `JCLabeledStatement`    |             |
-| `visitLambdaExpression(LambdaExpressionTree, Void)`          | `JCLambda`              |             |
-| `visitLiteral(LiteralTree, Void)`                            | `JCLiteral`             |             |
-| `visitMemberReference(MemberReferenceTree, Void)`            | `JCMemberReference`     |             |
-| `visitMemberSelect(MemberSelectTree, Void)`                  | `JCFieldAccess`         |             |
-| `visitMethod(MethodTree, Void)`                              | `JCMethodDecl`          |             |
-| `visitMethodInvocation(MethodInvocationTree, Void)`          | `JCMethodInvocation`    |             |
-| `visitModifiers(ModifiersTree, Void)`                        | `JCModifiers`           |             |
-| `visitNewArray(NewArrayTree, Void)`                          | `JCNewArray`            |             |
-| `visitNewClass(NewClassTree, Void)`                          | `JCNewClass`            |             |
-| `visitOther(Tree, Void)`                                     | `JCTree`                |             |
-| `visitParameterizedType(ParameterizedTypeTree, Void)`        | `JCTypeApply`           |             |
-| `visitParenthesized(ParenthesizedTree, Void)`                | `JCParens`              |             |
-| `visitPrimitiveType(PrimitiveTypeTree, Void)`                | `JCPrimitiveTypeTree`   |             |
-| `visitReturn(ReturnTree, Void)`                              | `JCReturn`              |             |
-| `visitSwitch(SwitchTree, Void)`                              | `JCSwitch`              |             |
-| `visitSynchronized(SynchronizedTree, Void)`                  | `JCSynchronized`        |             |
-| `visitThrow(ThrowTree, Void)`                                | `JCThrow`               |             |
-| `visitTry(TryTree, Void)`                                    | `JCTry`                 |             |
-| `visitTypeCast(TypeCastTree, Void)`                          | `JCTypeCast`            |             |
-| `visitTypeParameter(TypeParameterTree, Void)`                | `JCTypeParameter`       |             |
-| `visitUnary(UnaryTree, Void)`                                | `JCUnary`               |             |
-| `visitUnionType(UnionTypeTree, Void)`                        | `JCTypeUnion`           |             |
-| `visitVariable(VariableTree, Void)`                          | `JCVariableDecl`        |             |
-| `visitWhileLoop(WhileLoopTree, Void)`                        | `JCWhileLoop`           |             |
-| `visitWildcard(WildcardTree, Void)`                          | `JCWildcard`            |             |
+```java
+public class aa {
+
+    public static void main(String[] args) {
+        int i = 0;
+        i = i + 4;
+        i += 2;
+        System.out.println(i);
+    }
+}
+```
+
+
+
+| **Method**                                                   | **JC equivalent**       | **Example**                                                  |
+| ------------------------------------------------------------ | ----------------------- | ------------------------------------------------------------ |
+| `visitAnnotatedType(AnnotatedTypeTree, Void)`                | `JCAnnotatedType`       |                                                              |
+| `visitAnnotation(AnnotationTree, Void)`                      | `JCAnnotation`          |                                                              |
+| `visitArrayAccess(ArrayAccessTree, Void)`                    | `JCArrayAccess`         |                                                              |
+| `visitArrayType(ArrayTypeTree, Void)`                        | `JCArrayTypeTree`       | `String[]`                                                   |
+| `visitAssert(AssertTree, Void)`                              | `JCAssert`              |                                                              |
+| `visitAssignment(AssignmentTree, Void)`                      | `JCAssign`              | `i = i + 2`                                                  |
+| `visitBinary(BinaryTree, Void)`                              | `JCBinary`              | `i + 4`                                                      |
+| `visitBlock(BlockTree, Void)`                                | `JCBlock`               |                                                              |
+| `visitBreak(BreakTree, Void)`                                | `JCBreak`               |                                                              |
+| `visitCase(CaseTree, Void)`                                  | `JCCase`                |                                                              |
+| `visitCatch(CatchTree, Void)`                                | `JCCatch`               |                                                              |
+| `visitClass(ClassTree, Void)`                                | `JCClassDecl`           |                                                              |
+| `visitCompilationUnit(CompilationUnitTree, Void)`            | `JCCompilationUnit`     |                                                              |
+| `visitCompoundAssignment(CompoundAssignmentTree, Void)`      | `JCAssignOp`            | `i += 2`                                                     |
+| `visitConditionalExpression(ConditionalExpressionTree, Void)` | `JCConditional`         |                                                              |
+| `visitContinue(ContinueTree, Void)`                          | `JCContinue`            |                                                              |
+| `visitDoWhileLoop(DoWhileLoopTree, Void)`                    | `JCDoWhileLoop`         |                                                              |
+| `visitEmptyStatement(EmptyStatementTree, Void)`              | `JCSkip`                |                                                              |
+| `visitEnhancedForLoop(EnhancedForLoopTree, Void)`            | `JCEnhancedForLoop`     |                                                              |
+| `visitErroneous(ErroneousTree, Void)`                        | `JCErroneous`           |                                                              |
+| `visitExpressionStatement(ExpressionStatementTree, Void)`    | `JCExpressionStatement` | `i = i + 2;` <<-- Note this semicolon!<br />`System.out.println(i);` |
+| `visitForLoop(ForLoopTree, Void)`                            | `JCForLoop`             |                                                              |
+| `visitIdentifier(IdentifierTree, Void)`                      | `JCIdent`               | `System`, `i`, `String`                                      |
+| `visitIf(IfTree, Void)`                                      | `JCIf`                  |                                                              |
+| `visitImport(ImportTree, Void)`                              | `JCImport`              |                                                              |
+| `visitInstanceOf(InstanceOfTree, Void)`                      | `JCInstanceOf`          |                                                              |
+| `visitIntersectionType(IntersectionTypeTree, Void)`          | `JCTypeIntersection`    |                                                              |
+| `visitLabeledStatement(LabeledStatementTree, Void)`          | `JCLabeledStatement`    |                                                              |
+| `visitLambdaExpression(LambdaExpressionTree, Void)`          | `JCLambda`              |                                                              |
+| `visitLiteral(LiteralTree, Void)`                            | `JCLiteral`             | `2`                                                          |
+| `visitMemberReference(MemberReferenceTree, Void)`            | `JCMemberReference`     |                                                              |
+| `visitMemberSelect(MemberSelectTree, Void)`                  | `JCFieldAccess`         | `System.out.println`<br />`System.out`                       |
+| `visitMethod(MethodTree, Void)`                              | `JCMethodDecl`          |                                                              |
+| `visitMethodInvocation(MethodInvocationTree, Void)`          | `JCMethodInvocation`    | `System.out.println(i)`                                      |
+| `visitModifiers(ModifiersTree, Void)`                        | `JCModifiers`           | `public`, `static`                                           |
+| `visitNewArray(NewArrayTree, Void)`                          | `JCNewArray`            |                                                              |
+| `visitNewClass(NewClassTree, Void)`                          | `JCNewClass`            |                                                              |
+| `visitOther(Tree, Void)`                                     | `JCTree`                |                                                              |
+| `visitParameterizedType(ParameterizedTypeTree, Void)`        | `JCTypeApply`           |                                                              |
+| `visitParenthesized(ParenthesizedTree, Void)`                | `JCParens`              |                                                              |
+| `visitPrimitiveType(PrimitiveTypeTree, Void)`                | `JCPrimitiveTypeTree`   | `void`, `int`                                                |
+| `visitReturn(ReturnTree, Void)`                              | `JCReturn`              |                                                              |
+| `visitSwitch(SwitchTree, Void)`                              | `JCSwitch`              |                                                              |
+| `visitSynchronized(SynchronizedTree, Void)`                  | `JCSynchronized`        |                                                              |
+| `visitThrow(ThrowTree, Void)`                                | `JCThrow`               |                                                              |
+| `visitTry(TryTree, Void)`                                    | `JCTry`                 |                                                              |
+| `visitTypeCast(TypeCastTree, Void)`                          | `JCTypeCast`            |                                                              |
+| `visitTypeParameter(TypeParameterTree, Void)`                | `JCTypeParameter`       |                                                              |
+| `visitUnary(UnaryTree, Void)`                                | `JCUnary`               |                                                              |
+| `visitUnionType(UnionTypeTree, Void)`                        | `JCTypeUnion`           |                                                              |
+| `visitVariable(VariableTree, Void)`                          | `JCVariableDecl`        | `int i = 0`, `String[] args`                                 |
+| `visitWhileLoop(WhileLoopTree, Void)`                        | `JCWhileLoop`           |                                                              |
+| `visitWildcard(WildcardTree, Void)`                          | `JCWildcard`            |                                                              |
