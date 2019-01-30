@@ -25,7 +25,9 @@ public class aa {
 | `visitAssert(AssertTree, Void)`                              | `JCAssert`              |                                             |
 | `visitAssignment(AssignmentTree, Void)`                      | `JCAssign`              | `i = i + 2`                                 |
 | `visitBinary(BinaryTree, Void)`                              | `JCBinary`              | `i + 4`                                     |
-| `visitBlock(BlockTree, Void)`                                | `JCBlock`               |                                             |
+| `visitBlock(BlockTree, Void)`                                | `JCBlock`               | `{
+blah
+}`                                  |
 | `visitBreak(BreakTree, Void)`                                | `JCBreak`               |                                             |
 | `visitCase(CaseTree, Void)`                                  | `JCCase`                |                                             |
 | `visitCatch(CatchTree, Void)`                                | `JCCatch`               |                                             |
@@ -47,7 +49,7 @@ public class aa {
 | `visitIntersectionType(IntersectionTypeTree, Void)`          | `JCTypeIntersection`    |                                             |
 | `visitLabeledStatement(LabeledStatementTree, Void)`          | `JCLabeledStatement`    |                                             |
 | `visitLambdaExpression(LambdaExpressionTree, Void)`          | `JCLambda`              |                                             |
-| `visitLiteral(LiteralTree, Void)`                            | `JCLiteral`             | `2`                                         |
+| `visitLiteral(LiteralTree, Void)`                            | `JCLiteral`             | `2`<br />`true`                             |
 | `visitMemberReference(MemberReferenceTree, Void)`            | `JCMemberReference`     |                                             |
 | `visitMemberSelect(MemberSelectTree, Void)`                  | `JCFieldAccess`         | `System.out.println`<br />`System.out`      |
 | `visitMethod(MethodTree, Void)`                              | `JCMethodDecl`          |                                             |
@@ -66,7 +68,7 @@ public class aa {
 | `visitTry(TryTree, Void)`                                    | `JCTry`                 |                                             |
 | `visitTypeCast(TypeCastTree, Void)`                          | `JCTypeCast`            |                                             |
 | `visitTypeParameter(TypeParameterTree, Void)`                | `JCTypeParameter`       |                                             |
-| `visitUnary(UnaryTree, Void)`                                | `JCUnary`               |                                             |
+| `visitUnary(UnaryTree, Void)`                                | `JCUnary`               | `i++`                                       |
 | `visitUnionType(UnionTypeTree, Void)`                        | `JCTypeUnion`           |                                             |
 | `visitVariable(VariableTree, Void)`                          | `JCVariableDecl`        | `int i = 0`<br /> `String[] args`           |
 | `visitWhileLoop(WhileLoopTree, Void)`                        | `JCWhileLoop`           |                                             |
