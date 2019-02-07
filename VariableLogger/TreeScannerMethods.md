@@ -81,7 +81,3 @@ public class aa {
 | `visitVariable(VariableTree, Void)`                          | `JCVariableDecl`        | `int i = 0`<br /> `String[] args`           |
 | `visitWhileLoop(WhileLoopTree, Void)`                        | `JCWhileLoop`           |                                             |
 | `visitWildcard(WildcardTree, Void)`                          | `JCWildcard`            |                                             |
-
-```java
-blah
-```
